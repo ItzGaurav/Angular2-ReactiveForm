@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="APMModelStoreContainer" CdmEntityContainer="APMEntities">
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="APMModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="productID" ColumnName="productID" />
+          <ScalarProperty Name="productName" ColumnName="productName" />
+          <ScalarProperty Name="productCode" ColumnName="productCode" />
+          <ScalarProperty Name="releaseDate" ColumnName="releaseDate" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="starRaiting" ColumnName="starRaiting" />
+          <ScalarProperty Name="imageUrl" ColumnName="imageUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

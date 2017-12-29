@@ -1,0 +1,53 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div>
+
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-2">Filter By:</div>
+            <div class="col-md-4">
+                <input [(ngModel)]='filterby' />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h3> Filtered By: <i> {{filterby}}</i></h3> 
+            </div>
+        </div>
+
+
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            <button class="btn btn-primary" (click)="toggeleImage()">
+                                {{showImage?'Hide' : 'Show'}} Image
+                            </button>
+                        </th>
+
+                        <td>Product</td>
+                        <td>Code</td>
+                        <td>Available</td>
+                        <td>Price</td>
+                        <td>5 Star Raiting</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of Products;">
+                        <td><img *ngIf='showImage' style="max-height:50px;max-width:50px;" src={{product.imageUrl}} /></td>
+                        <td><a [routerLink]="['/product',product.productID]">{{product.productName}}</a></td>
+                        <td>{{product.productCode}}</td>
+                        <td>{{product.releaseDate}}</td>
+                        <td>{{product.price | currency:'USD':true:'1.3-3'}}</td>
+                        <td>
+                            <star [rating]='product.starRaiting' (ratingClicked)="onRatingClickEvent($event)"></star>
+                        
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
